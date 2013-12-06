@@ -24,15 +24,60 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
+
+        <script type="text/javascript">
+
+            Ext.application({
+                name: 'Sencha',
+                requires: ['Ext.form.Panel'],
+                launch: function () {
+
+                    var c1 = {
+                        xtype: 'checkboxfield',
+                        name : 'tomato',
+                        label: 'Tomato',
+                        value: 'tomato',
+                        checked: true
+                    }
+
+                    var c2 = {
+                        xtype: 'checkboxfield',
+                        name : 'salami',
+                        label: 'Salami'
+                    }
+
+                    var textf = {
+                        xtype: 'textfield',
+                        label: 'First Name',
+                        name: 'firstName'
+                    }
+
+                    var c3 = {
+                        xtype: 'selectfield',
+                        name : 'options',
+                        label: 'Lalalala!',
+                        options: [
+                            {text: 'Text 1', value: 1}, {text: 'Text 2', value: 2}
+                        ]
+                    }
+
+                    var credits = {
+                        html: 'Illustrated by someone'
+                    };
+
+                    Sencha.container = Ext.create('Ext.Container', {
+                        fullscreen: true,
+//                layout: 'vbox',
+                        defaults: {flex: 1},
+                        items: [c1, c2, c3, textf, credits]
+                    });
+                }
+            });
+
+        </script>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
+        hey
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
